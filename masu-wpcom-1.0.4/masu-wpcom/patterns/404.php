@@ -1,14 +1,10 @@
-<?php
-/**
- * Title: A 404 page
- * Slug: masu/404
- * Inserter: no
- */
-?>
-<!-- wp:heading {"level":1,"fontSize":"normal"} -->
-<h1 class="has-normal-font-size" id="oops-that-page-can-t-be-found"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'masu' ); ?></h1>
-<!-- /wp:heading -->
+<?php get_header(); ?>
 
-<!-- wp:paragraph -->
-<p><?php echo  esc_html__( 'It looks like nothing was found at this location. Maybe try a search?', 'masu' ); ?></p>
-<!-- /wp:paragraph -->
+<div class="container">
+  <h1><?php _e('404 – Faqja nuk u gjend', 'malet-kosoves'); ?></h1>
+  <p><?php _e('Na vjen keq, por nuk mundëm të gjejmë faqen që po kërkon.', 'malet-kosoves'); ?></p>
+  <p><?php _e('Mund të përdorësh kutinë e kërkimit më poshtë për të gjetur atë që po kërkon:', 'malet-kosoves'); ?></p>
+  <?php get_search_form(); ?>
+</div>
+
+<?php get_footer(); ?>

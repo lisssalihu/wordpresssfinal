@@ -1,64 +1,30 @@
 <?php
-/**
- * Masu functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package Masu
- * @since Masu 1.0
- */
+function maletkosoves_setup() {
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    register_nav_menus(array(
+        'primary' => __('Main Menu', 'malet-kosoves'),
+        'footer' => __('Footer Menu', 'malet-kosoves')
+    ));
+    add_theme_support('html5', array('search-form', 'comment-form', 'gallery', 'caption'));
+}
+add_action('after_setup_theme', 'maletkosoves_setup');
 
+function maletkosoves_scripts() {
+    wp_enqueue_style('maletkosoves-style', get_stylesheet_uri());
+    wp_enqueue_script('maletkosoves-scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'maletkosoves_scripts');
 
-if ( ! function_exists( 'masu_support' ) ) :
-
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * @since Masu 1.0
-	 *
-	 * @return void
-	 */
-	function masu_support() {
-		// Add support for block styles.
-		add_theme_support( 'wp-block-styles' );
-
-		// Enqueue editor styles.
-		add_editor_style( 'style.css' );
-	}
-
-endif;
-
-add_action( 'after_setup_theme', 'masu_support' );
-
-if ( ! function_exists( 'masu_styles' ) ) :
-
-	/**
-	 * Enqueue styles.
-	 *
-	 * @since Masu 1.0
-	 *
-	 * @return void
-	 */
-	function masu_styles() {
-
-		// Register theme stylesheet.
-		wp_register_style(
-			'masu-style',
-			get_template_directory_uri() . '/style.css',
-			array(),
-			wp_get_theme()->get( 'Version' )
-		);
-
-		// Enqueue theme stylesheet.
-		wp_enqueue_style( 'masu-style' );
-
-	}
-
-endif;
-
-add_action( 'wp_enqueue_scripts', 'masu_styles' );
-
-
-// updater for WordPress.com themes
-if ( is_admin() )
-	include dirname( __FILE__ ) . '/inc/updater.php';
+function maletkosoves_widgets_init() {
+    register_sidebar(array(
+        'name' => __('Main Sidebar', 'malet-kosoves'),
+        'id' => 'sidebar-1',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ));
+}
+add_action('widgets_init', 'maletkosoves_widgets_init');
+?>
