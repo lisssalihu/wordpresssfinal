@@ -1,0 +1,144 @@
+/*
+Theme Name: Malet e Kosovës
+Theme URI:  https://example.com/malet-e-kosoves
+Author:     Lisii (projekt i personalizuar)
+Author URI: https://example.com
+Description: Tema e fokusuar te blogu për malet e Kosovës — dizajn modern, responsive dhe profesional.
+Version:    1.0
+License:    GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: malet-e-kosoves
+*/
+
+:root{
+    --primary:#1f5a2b; /* e gjelber maleve */
+    --accent:#e6b800;  /* ngjyre top-it (sunset) */
+    --muted:#6b7280;
+    --bg:#f7faf9;
+    --surface:#ffffff;
+    --max-width:1200px;
+    --radius:12px;
+    --shadow: 0 6px 20px rgba(15,23,42,0.08);
+    --transition: 200ms ease;
+    --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Global reset and base */
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+    margin:0;
+    font-family:var(--font-sans);
+    background:var(--bg);
+    color:#111827;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.6;
+    font-size:16px;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
+
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+/* Page layout */
+#page{min-height:100vh;display:flex;flex-direction:column}
+.site-content{flex:1}
+.content-area{padding:40px 0}
+
+/* Header */
+header{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));backdrop-filter:blur(6px);box-shadow:var(--shadow)}
+.top-bar{padding:12px 0}
+.logo span{font-weight:700;font-size:22px;color:var(--primary)}
+.logo img{height:56px}
+.searchbox{float:right}
+.menu-area{border-top:1px solid rgba(15,23,42,0.04)}
+.main-menu{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.main-menu ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+.main-menu li{position:relative}
+.main-menu a{display:inline-block;padding:8px 10px;border-radius:8px;transition:var(--transition);font-weight:600}
+.main-menu a:hover{background:rgba(31,90,43,0.06)}
+
+.check-button{background:none;border:0;cursor:pointer;padding:8px;border-radius:8px}
+.menu-icon{width:24px;height:18px;display:inline-block}
+.menu-icon .bar1,.menu-icon .bar2,.menu-icon .bar3{height:3px;background:#111827;margin:4px 0;border-radius:2px}
+
+/* Hero / Slider */
+#container{position:relative;overflow:hidden}
+#inner_container{position:relative}
+#imgs_container{display:flex;transition:left 300ms var(--transition);position:relative}
+.img_container{min-width:100%;position:relative}
+.img_container img{width:100%;height:420px;object-fit:cover;border-bottom-left-radius:8px;border-bottom-right-radius:8px}
+#overlay{position:absolute;top:50%;left:0;right:0;transform:translateY(-50%);display:flex;justify-content:space-between;padding:0 20px}
+.overlay_button{background:rgba(0,0,0,0.45);color:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
+
+/* Dots */
+.dot{height:10px;width:10px;margin:0 4px;display:inline-block;border-radius:50%;background:rgba(0,0,0,0.25);cursor:pointer}
+.dot.active{background:var(--accent)}
+
+/* Sections */
+.hero{padding:60px 0;text-align:center;background:linear-gradient(180deg, rgba(31,90,43,0.06), rgba(255,255,255,0))}
+.hero h1{font-size:36px;margin:0}
+.services{padding:36px 0}
+.services h2{margin-bottom:18px}
+.services .services-item{background:var(--surface);padding:20px;border-radius:10px;box-shadow:var(--shadow)}
+
+/* Blog list */
+.home-blog .container{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.blog-items,.archive-items{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+.blog-items .post-card, .archive-items .post-card{background:var(--surface);padding:18px;border-radius:10px;box-shadow:var(--shadow)}
+.post-card h2{font-size:20px;margin:0 0 8px}
+.post-card .meta{font-size:14px;color:var(--muted);margin-bottom:12px}
+.post-card p{margin:0 0 12px}
+
+/* Single post */
+.single-post{background:var(--surface);padding:28px;border-radius:12px;box-shadow:var(--shadow)}
+.single-post h1{font-size:28px;margin-bottom:6px}
+.single-post .post-thumbnail{margin-bottom:18px}
+.single-post .entry-content{font-size:17px;line-height:1.8}
+
+/* Sidebar */
+.sidebar{background:transparent}
+.widget-wrapper{background:var(--surface);padding:16px;border-radius:10px;box-shadow:var(--shadow);margin-bottom:20px}
+.widget-title{font-size:16px;margin:0 0 10px}
+
+/* Pagination */
+.wpdevs-pagination{display:flex;justify-content:space-between;margin-top:20px}
+.wpdevs-pagination .pages{background:var(--surface);padding:8px 12px;border-radius:8px;box-shadow:var(--shadow)}
+
+/* Forms */
+input[type=text],input[type=email],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
+input[type=submit]{background:var(--primary);color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:700}
+input[type=submit]:hover{filter:brightness(1.03)}
+
+/* Footer */
+.site-footer{background:#0f1724;color:#ffffff;padding:28px 0;margin-top:40px}
+.site-footer .container{display:flex;align-items:center;justify-content:space-between}
+.site-footer a{color:#fff}
+.copyright p{margin:0}
+.footer-menu ul{list-style:none;display:flex;gap:14px;margin:0;padding:0}
+.footer-menu a{opacity:0.9}
+
+/* 404 */
+.error-404{padding:40px;text-align:center}
+
+/* Responsive */
+@media (max-width:1000px){
+    .home-blog .container{grid-template-columns:1fr}
+    .blog-items,.archive-items{grid-template-columns:1fr}
+    .main-menu ul{display:none}
+}
+@media (max-width:700px){
+    .img_container img{height:260px}
+    .hero h1{font-size:24px}
+    .site-footer .container{flex-direction:column;gap:12px}
+}
+
+/* Accessibility focus styles */
+a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(230,184,0,0.25);outline-offset:3px}
+
+/* Small utility classes */
+.text-muted{color:var(--muted)}
+.hint{font-size:13px;color:var(--muted)}
+.align-center{text-align:center}
