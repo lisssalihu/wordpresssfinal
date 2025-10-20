@@ -3,13 +3,13 @@
         <div id="inner_container">
             <div id="imgs_container">
                 <div class="img_container">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/1.jpg" alt="Mali 1 - Malet e Kosovës">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Gjeravica.jpg" alt="Mali 1 - Gjeravica">
                 </div>
                 <div class="img_container">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/2.jpg" alt="Mali 2 - Malet e Kosovës">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Hajla.jpg" alt="Mali 2 - Hajla">
                 </div>
                 <div class="img_container">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/3.jpg" alt="Mali 3 - Malet e Kosovës">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/Sharri.jpg" alt="Mali 3 - Sharri">
                 </div>
             </div>
             <div id="overlay">
